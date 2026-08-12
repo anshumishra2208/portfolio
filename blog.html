@@ -146,15 +146,146 @@
                     </h2>
                     <div class="-ml-1 -mt-4 w-full border border-(--border-subtle)"></div>
                     <p class="text-md text-(--text-3) max-w-2xl">Before Docker, the standard answer to "I need an
-                        isolated environment" was a <b class="text-white"> Virtual Machine (VM). </b> VMs work - but they're heavy. Each VM
+                        isolated environment" was a <b class="text-white"> Virtual Machine (VM). </b> VMs work - but
+                        they're heavy. Each VM
                         runs an entire operating system on top of your operating system. They take minutes to boot, eat
                         up gigabytes of RAM, and feel sluggish.</p>
+
+                    <div class="flex gap-7 max-w-xl flex-row">
+
+
+                        <div
+                            class="px-6 py-5 bg-(--surface-solid) border border-(--border-subtle) rounded-2xl max-w-1/2">
+                            <div class="flex gap-2 items-center">
+                                <span class="inline-block w-2 h-2 bg-red-400 rounded-full "></span>
+                                <p class="text-sm text-white font-semibold">Virtual Machine</p>
+                            </div>
+                            <ul class="list-disc pl-4 flex-nowrap">
+                                <li class="text-xs text-(--text-4) mt-2">Full OS inside every VM (gigabytes)</li>
+                                <li class="text-xs text-(--text-4) mt-2">Takes minutes to start</li>
+                                <li class="text-xs text-(--text-4) mt-2">Heavy on RAM and CPU</li>
+                                <li class="text-xs text-(--text-4) mt-2">Hard to share and version control</li>
+
+                            </ul>
+                        </div>
+
+
+                        <div
+                            class="px-6 py-5 bg-(--surface-solid) border border-(--accent-border) rounded-2xl max-w-1/2">
+                            <div class="flex gap-2 items-center">
+                                <span class="inline-block w-2 h-2 bg-green-400 rounded-full"></span>
+                                <p class="text-sm text-white pl-1.5 font-semibold">Docker Container</p>
+                            </div>
+                            <ul>
+                                <li class="text-xs text-(--text-4) mt-2"> <span
+                                        class="text-yellow-400 font-semibold pr-2">✓
+                                    </span>Shares your OS kernel (megabytes)</li>
+                                <li class="text-xs text-(--text-4) mt-2"> <span
+                                        class="text-yellow-400 font-semibold pr-2">✓
+                                    </span> Starts in under a second</li>
+                                <li class="text-xs text-(--text-4) mt-2"> <span
+                                        class="text-yellow-400 font-semibold pr-2">✓
+                                    </span> Lightweight and efficient</li>
+                                <li class="text-xs text-(--text-4) mt-2"> <span
+                                        class="text-yellow-400 font-semibold pr-2">✓
+                                    </span> Easy to share via Docker Hub</li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <p class="text-md text-(--text-3) max-w-2xl">Containers are so lightweight that you can run dozens
+                        of them on a single laptop simultaneously,
+                        each completely isolated from the others. This was simply not practical with virtual machines.
+                    </p>
                 </article>
+
+                <article>
+                    <h2 class="text-(--text-1) text-2xl font-serif mt-8 -ml-2 pt-4 max-w-xl font-bold">The Four Concepts
+                        You Need to Know</h2>
+                    <div class="-ml-2 mt-3 w-full border border-(--border-subtle) "></div>
+                    <p class="text-md text-(--text-3) max-w-2xl mt-6 -ml-1.5">Docker has its own vocabulary. Once you
+                        understand
+                        these four terms, everything else clicks into place.</p>
+
+                    <div class="flex flex-col gap-6 mt-10 -ml-2">
+
+                        <div class="w-full border border-(--border-subtle) rounded-xl bg-(--surface-solid)">
+                            <div class="flex gap-4 items-center pl-6 py-6">
+                                <p
+                                    class="px-3 py-2 rounded-md text-sm text-amber-300 bg-(--accent-dim) border border-(--accent-border)">
+                                    01</p>
+                                <p class="text-(--text-1) text-lg">Image</p>
+                            </div>
+                            <p class="text-sm text-(--text-3) max-w-xl pb-5 ml-20 -mt-4">An image is the blueprint. It's
+                                a read-only template that describes exactly what should be
+                                inside a container - the operating system, the installed packages, your application
+                                code,
+                                and the startup commands. Think of it like a recipe. The recipe itself doesn't cook the
+                                food, but it tells you exactly how to.</p>
+
+
+                        </div>
+
+                        <div class="w-full border border-(--border-subtle) rounded-xl bg-(--surface-solid)">
+                            <div class="flex gap-4 items-center pl-6 py-6">
+                                <p
+                                    class="px-3 py-2 rounded-md text-sm text-amber-300 bg-(--accent-dim) border border-(--accent-border)">
+                                    02</p>
+                                <p class="text-(--text-1) text-lg">Container</p>
+                            </div>
+                            <p class="text-sm text-(--text-3) max-w-xl pb-5 ml-20 -mt-4">A container is a running
+                                instance of an image. Following our recipe analogy: if an image is the recipe, a
+                                container is the actual cooked meal. You can spin up multiple containers from the same
+                                image, each completely independent of the others. Start them, stop them, delete them -
+                                the image remains untouched.</p>
+
+
+                        </div>
+
+                        <div class="w-full border border-(--border-subtle) rounded-xl bg-(--surface-solid)">
+                            <div class="flex gap-4 items-center pl-6 py-6">
+                                <p
+                                    class="px-3 py-2 rounded-md text-sm text-amber-300 bg-(--accent-dim) border border-(--accent-border)">
+                                    03</p>
+                                <p class="text-(--text-1) text-lg">Dockerfile</p>
+                            </div>
+                            <p class="text-sm text-(--text-3) max-w-xl pb-5 ml-20 -mt-4">A Dockerfile is a plain text
+                                file where you write the instructions to build your image. It lives in your project
+                                folder alongside your code and can be committed to Git like any other file. This is what
+                                makes Docker so powerful - your environment becomes code. Reviewable, versioned,
+                                reproducible.p>
+
+
+                        </div>
+
+                        <div class="w-full border border-(--border-subtle) rounded-xl bg-(--surface-solid)">
+                            <div class="flex gap-4 items-center pl-6 py-6">
+                                <p
+                                    class="px-3 py-2 rounded-md text-sm text-amber-300 bg-(--accent-dim) border border-(--accent-border)">
+                                    04</p>
+                                <p class="text-(--text-1) text-lg">Docker Hub</p>
+                            </div>
+                            <p class="text-sm text-(--text-3) max-w-xl pb-5 ml-20 -mt-4">Docker Hub is like GitHub, but
+                                for Docker images. It's a public registry where you can push your images so others can
+                                pull and run them. It also hosts thousands of official images for popular tools -
+                                Node.js, PostgreSQL, Redis, Nginx - pre-built and ready to use in your project within
+                                seconds.</p>
+
+
+                        </div>
+
+                    </div>
+                </article>
+
             </div>
 
 
         </div>
     </section>
+
+
 
 
 </body>
