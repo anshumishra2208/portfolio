@@ -279,6 +279,52 @@
                     </div>
                 </article>
 
+                <article>
+                    <h2 class="text-(--text-1) text-2xl font-serif mt-8 -ml-2 pt-4 max-w-2xl font-bold">Docker Compose:
+                        When One Container Isn't Enough</h2>
+                    <div class="-ml-2 mt-3 w-full border border-(--border-subtle) "></div>
+                    <p class="text-md text-(--text-3) max-w-2xl mt-6">Real applications are rarely just one thing. A
+                        typical
+                        web app has a backend server, a database, a cache, maybe a background job worker, and a reverse
+                        proxy. That's five separate services, each needing its own environment.</p>
+                    <p class="text-md text-(--text-3) max-w-2xl mt-6"><b class="text-white"> Docker Compose </b> solves
+                        this. It lets you define all
+                        your services in a single configuration file. With one command, you can start your entire
+                        application stack - database included - in seconds. With another command, you can tear the whole
+                        thing down.</p>
+
+                    <div class="bg-(--surface-card) border border-(--border-subtle) rounded-xl mt-6 -ml-1">
+                        <p class="text-sm text-(--text-4) py-8 pl-7 -mb-5">EXAMPLE: A TYPICAL WEB STACK</p>
+                        <div class="pl-7 py-2 flex  gap-2 items-center">
+                            <div class="w-2 h-2 bg-blue-400 rounded-full"></div>
+                            <p class="text-sm text-white">api</p>
+                            <p class="text-(--text-3) text-sm">- Your Node.js or Python backend</p>
+                        </div>
+
+                        <div class="pl-7 py-2 flex  gap-2 items-center">
+                            <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                            <p class="text-sm text-white">db</p>
+                            <p class="text-(--text-3) text-sm">- PostgreSQL database</p>
+                        </div>
+
+                        <div class="pl-7 py-2 flex  gap-2 items-center">
+                            <div class="w-2 h-2 bg-red-400 rounded-full"></div>
+                            <p class="text-sm text-white">cache</p>
+                            <p class="text-(--text-3) text-sm"> - Redis for fast data access</p>
+                        </div>
+
+                        <div class="pl-7 py-2 flex  gap-2 items-center">
+                            <div class="w-2 h-2 bg-violet-400 rounded-full"></div>
+                            <p class="text-sm text-white">nginx</p>
+                            <p class="text-(--text-3) text-sm">- Reverse proxy and static file server</p>
+                        </div>
+
+                        <div class=" mt-3 border-b border-(--border-subtle) mb-5 ml-6.5 hidden md:flex md:w-xl "></div>
+                        <p class="max-w-2xl text-xs text-(--text-4) px-6.5 py-5 -mt-4 ">All four containers - with proper networking between them - spun up with a single command. Shut down cleanly with another. Every developer on the team gets the exact same setup.</p>
+
+                    </div>
+                </article>
+
             </div>
 
 
